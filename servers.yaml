@@ -1,0 +1,9 @@
+---
+- name: ansible
+  box: ubuntu/trusty64
+  ram: 256
+  ip: 172.17.8.101
+- name: webserver
+  box: ubuntu/trusty64
+  ram: 256
+  ip: 172.17.8.102
