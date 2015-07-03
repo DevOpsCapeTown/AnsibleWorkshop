@@ -3,7 +3,7 @@
   box: ubuntu/trusty64
   ram: 256
   ip: 172.17.8.101
-- name: webserver
+- name: webserver01
   box: ubuntu/trusty64
   ram: 256
   ip: 172.17.8.102
