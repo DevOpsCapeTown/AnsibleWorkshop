@@ -1,2 +1,2 @@
 [webservers]
-webserver01 ansible_ssh_host=172.17.8.102
+webserver01 ansible_ssh_host=172.17.8.102 ansible_ssh_user=ansible

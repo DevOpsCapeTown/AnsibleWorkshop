@@ -6,3 +6,4 @@ sudo apt-get update
 sudo apt-get -y install ansible
 
 cp /vagrant/id_rsa* ~/.ssh/
+chmod 600 ~/.ssh/id_rsa
