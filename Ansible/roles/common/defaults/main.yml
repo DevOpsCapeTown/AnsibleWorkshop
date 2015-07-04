@@ -1,0 +1,3 @@
+---
+ansible_username: ansible
+ansible_public_key: public_keys/ansible

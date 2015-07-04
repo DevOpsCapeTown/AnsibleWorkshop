@@ -1,0 +1,24 @@
+- name: Updating apt
+  apt: update_cache=yes cache_valid_time=3600
+
+- name: Install basic packages
+  apt: name={{ item }} state=installed
+  with_items:
+  - git-core
+  - nmap
+
+- name: Create wheel group
+  group: name=wheel state=present
+
+- name: Add wheel to sudoers file
+  lineinfile: "dest=/etc/sudoers state=present regexp='^%wheel' line='%wheel ALL=(ALL) NOPASSWD: ALL'"
+
+- name: Add Ansible user
+  user: name={{ansible_username }} shell=/bin/bash groups=sudo,wheel append=yes state=present
+
+- name: Set up authorized_keys for the deploy
+  authorized_key:
+    user={{ ansible_username }}
+    key="{{ item }}"
+  with_file:
+   - "{{ ansible_public_key }}"
