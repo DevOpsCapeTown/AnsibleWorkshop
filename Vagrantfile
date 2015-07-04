@@ -25,6 +25,10 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
         vb.memory = servers["ram"]
       end
       srv.vm.synced_folder "./Ansible", "/ansible", :mount_options => ["fmode=666"]
+
+      if (servers["name"] == "webserver01")
+        srv.vm.network "forwarded_port", guest: 8080, host: 8080
+      end
     end
   end
 end
