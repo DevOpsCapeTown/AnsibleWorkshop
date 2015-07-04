@@ -19,5 +19,18 @@ Goto the directory `cd AnsibleWorkshop`
 `vagrant ssh ansible`
 `cd /ansible`
 `ansible -i dev all -m ping` -> this will error due to permissions
-'ansible-playbook -i dev bootstrap.yml --ask-pass --ask-su-pass --user=vagrant'
+`ansible-playbook -i dev bootstrap.yml --ask-pass --ask-su-pass --user=vagrant`
 `ansible -i dev all -m ping` -> this will now work
+
+## Lab 03
+`git checkout tags/Lab03`
+`vagrant up`
+`cd /ansible/`
+`ansible-galaxy install jdauphant.nginx --roles-path=roles`
+`ansible-playbook -i dev site.yml`
+
+## Lab 04
+`git checkout tags/Lab04`
+`vagrant up`
+`cd /ansible/`
+`ansible-playbook -i dev site.yml`

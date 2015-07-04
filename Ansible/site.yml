@@ -11,3 +11,4 @@
           - location / { try_files $uri $uri/ /index.html; }
           - server_name {{ ansible_hostname }}
       sudo: True
+    - role: deploy.htmlsite      

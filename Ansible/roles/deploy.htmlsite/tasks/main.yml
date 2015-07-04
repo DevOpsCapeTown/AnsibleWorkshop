@@ -1,0 +1,8 @@
+- name: Clear out the current directory
+  file: path={{ site_folder }} state=absent
+  sudo: True
+
+- name: Cloning site from github.
+  git: repo={{ site_github_url }}
+       dest={{ site_folder }}
+  sudo: True
